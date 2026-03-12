@@ -1,16 +1,36 @@
-# Agent Vault
+# AgentVault
 
-CLI-first retrieval system for project knowledge.  
-Ingest local documents, ask grounded questions, and keep auditable markdown conversation logs.
+CLI-first RAG system for project knowledge.
 
-## Why Agent Vault
+AgentVault indexes local files into a vector database and exposes a lightweight CLI interface for grounded question answering. It is designed to work alongside coding agents such as OpenClaw, Claude Code, Codex, or any automation tool that can call shell commands.
 
-- Retrieval-first workflow for coding agents and developer tooling.
-- Monorepo architecture with clean ports-and-adapters boundaries.
-- Local SQLite vector store (no Supabase dependency required).
-- OpenAI, Azure OpenAI, and Ollama (local models) support.
-- Deterministic CLI output with explicit failure exit codes.
+Instead of repeatedly scanning entire repositories, AgentVault performs semantic retrieval over a pre-built index and returns only the relevant context needed to answer a question.
 
+This significantly reduces token usage, latency, and cost when working with large local projects.
+
+## Why AgentVault
+
+Modern coding agents often answer questions by reading large portions of a repository. While effective, this approach becomes expensive and slow when projects grow.
+
+AgentVault introduces a retrieval layer between the agent and the filesystem.
+
+The workflow becomes:
+
+Agent → AgentVault CLI → Vector Retrieval → Grounded Answer
+
+## Key advantages:
+
+Token efficient – avoids repeatedly loading entire codebases
+
+Agent friendly – simple CLI interface that agents can call directly
+
+Local-first – no external vector database required
+
+Deterministic outputs – predictable CLI responses for automation
+
+Auditable interactions – all queries saved as markdown logs
+
+AgentVault acts as a knowledge gateway for local repositories, allowing agents to query project knowledge instead of scanning files every time.
 ## Features
 
 - `configure`: interactive provider and model setup.
