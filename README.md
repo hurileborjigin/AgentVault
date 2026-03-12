@@ -18,6 +18,23 @@ The workflow becomes:
 
 Agent → AgentVault CLI → Vector Retrieval → Grounded Answer
 
+## Hybrid Search & RRF Reranking
+
+AgentVault uses a hybrid retrieval pipeline that combines two complementary search strategies:
+
+- **Vector search** — cosine similarity over embeddings captures semantic meaning, finding chunks that are conceptually related to the query even when exact keywords don't match.
+- **BM25 keyword search** — FTS5 full-text search over chunk content, powered by SQLite's built-in Porter stemming tokenizer. This catches exact terminology and keyword matches that vector search may rank lower.
+
+Both result sets are merged and reranked using **Reciprocal Rank Fusion (RRF)** with a default constant of `k=60`. RRF is rank-based rather than score-based, which avoids the problem of incomparable score distributions between vector similarity and BM25 relevance. Each chunk receives a fused score of `1/(k + vectorRank) + 1/(k + bm25Rank)`, and the top results are passed to the answer provider.
+
+The full retrieval pipeline:
+
+```
+embed query → vector search + BM25 search → RRF rerank → context reduction → grounded answer
+```
+
+This runs automatically — no extra flags needed.
+
 ## Key advantages:
 
 Token efficient – avoids repeatedly loading entire codebases
@@ -247,7 +264,6 @@ pnpm link --global
 ## Roadmap
 
 - Replace image/OCR stubs with production adapters.
-- Expand retrieval/ranking controls.
 - Add broader fixture-based integration coverage.
 
 ## Contributing
