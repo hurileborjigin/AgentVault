@@ -6,7 +6,7 @@ import { MarkdownConversationExporter } from "../src";
 
 describe("MarkdownConversationExporter", () => {
   it("writes markdown log with expected sections", async () => {
-    const root = await fs.mkdtemp(path.join(os.tmpdir(), "agent-vault-test-"));
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), "agents-vault-test-"));
     const exporter = new MarkdownConversationExporter(root);
 
     const output = await exporter.export({

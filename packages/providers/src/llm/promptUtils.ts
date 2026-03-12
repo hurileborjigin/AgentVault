@@ -1,4 +1,4 @@
-import { Citation, RetrievedChunk } from "@agent-vault/core";
+import { Citation, RetrievedChunk } from "@agents-vault/core";
 
 export function buildPrompt(question: string, context: RetrievedChunk[], instructions?: string): string {
   const contextLines = context

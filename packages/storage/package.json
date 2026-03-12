@@ -1,12 +1,12 @@
 {
-  "name": "@agent-vault/storage",
+  "name": "@agents-vault/storage",
   "version": "1.0.0",
   "description": "SQLite vector store, config repository, and auth vault for Agent Vault",
   "license": "MIT",
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agent-vault/agent-vault.git",
+    "url": "https://github.com/agents-vault/agents-vault.git",
     "directory": "packages/storage"
   },
   "engines": {
@@ -25,7 +25,7 @@
     "lint": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@agent-vault/core": "workspace:*",
-    "@agent-vault/shared": "workspace:*"
+    "@agents-vault/core": "workspace:*",
+    "@agents-vault/shared": "workspace:*"
   }
 }

@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { StatusService } from "@agent-vault/core";
+import { StatusService } from "@agents-vault/core";
 import { header, info, success, fail, divider } from "../ui";
 
 export function registerStatusCommand(

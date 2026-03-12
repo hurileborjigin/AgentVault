@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { AskService, ConfigureService, ConversationLogService, DoctorService, IngestService, StatusService } from "@agent-vault/core";
+import { AskService, ConfigureService, ConversationLogService, DoctorService, IngestService, StatusService } from "@agents-vault/core";
 import {
   DefaultChunker,
   discoverSourceFiles,
@@ -8,9 +8,9 @@ import {
   ParserFactory,
   PdfParser,
   TextParser,
-} from "@agent-vault/ingestion";
-import { createAnswerProvider, createEmbeddingProvider, StubOcrProvider, StubVisionCaptionProvider } from "@agent-vault/providers";
-import { reduceContextByScore } from "@agent-vault/retrieval";
+} from "@agents-vault/ingestion";
+import { createAnswerProvider, createEmbeddingProvider, StubOcrProvider, StubVisionCaptionProvider } from "@agents-vault/providers";
+import { reduceContextByScore } from "@agents-vault/retrieval";
 import {
   ConfigError,
   modelConfigurationSchema,
@@ -18,13 +18,13 @@ import {
   resolveDbPath,
   resolveDefaultProject,
   resolveOutputDir,
-} from "@agent-vault/shared";
-import { LocalConfigRepository, MarkdownConversationExporter, SqliteVectorStore } from "@agent-vault/storage";
+} from "@agents-vault/shared";
+import { LocalConfigRepository, MarkdownConversationExporter, SqliteVectorStore } from "@agents-vault/storage";
 
 export function createRuntime(cwd: string) {
   let bootstrapConfigPath = resolveConfigPath();
   if (!fs.existsSync(bootstrapConfigPath)) {
-    const legacyPath = path.join(process.env.HOME || "", ".agent-vault", "config.json");
+    const legacyPath = path.join(process.env.HOME || "", ".agents-vault", "config.json");
     if (legacyPath && fs.existsSync(legacyPath)) {
       bootstrapConfigPath = legacyPath;
     }
@@ -66,7 +66,7 @@ export function createRuntime(cwd: string) {
   async function createIngestService() {
     const config = await configRepository.load();
     if (!config) {
-      throw new ConfigError("No configuration found. Run `agent-vault configure` before ingest.");
+      throw new ConfigError("No configuration found. Run `agents-vault configure` before ingest.");
     }
 
     return new IngestService({

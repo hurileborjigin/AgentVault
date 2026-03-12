@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { ConfigRepository } from "@agent-vault/core";
+import { ConfigRepository } from "@agents-vault/core";
 import os from "node:os";
 import {
   DEFAULT_EMBEDDING_MODEL,
@@ -10,13 +10,13 @@ import {
   resolveDbPath,
   resolveDefaultProject,
   resolveOutputDir,
-} from "@agent-vault/shared";
+} from "@agents-vault/shared";
 
 export class LocalConfigRepository implements ConfigRepository {
   constructor(private readonly configPath: string = resolveConfigPath()) {}
 
   async load(): Promise<ModelConfiguration | null> {
-    const paths = [this.configPath, path.join(os.homedir(), ".agent-vault", "config.json")];
+    const paths = [this.configPath, path.join(os.homedir(), ".agents-vault", "config.json")];
 
     for (const configPath of paths) {
       try {
@@ -59,7 +59,7 @@ export class LocalConfigRepository implements ConfigRepository {
 
   async save(config: ModelConfiguration): Promise<void> {
     try {
-      await fs.unlink(path.join(os.homedir(), ".agent-vault", "config.json"));
+      await fs.unlink(path.join(os.homedir(), ".agents-vault", "config.json"));
     } catch {
       // ignore
     }

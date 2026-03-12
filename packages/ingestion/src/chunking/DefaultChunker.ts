@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
-import { Chunker, DocumentChunk, ParsedAsset } from "@agent-vault/core";
-import { sanitizeTextForStorage } from "@agent-vault/shared";
+import { Chunker, DocumentChunk, ParsedAsset } from "@agents-vault/core";
+import { sanitizeTextForStorage } from "@agents-vault/shared";
 
 const DEFAULT_WINDOW = 800;
 const DEFAULT_OVERLAP = 120;

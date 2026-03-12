@@ -1,5 +1,5 @@
 import path from "node:path";
-import { DocumentParser, ParsedAsset } from "@agent-vault/core";
+import { DocumentParser, ParsedAsset } from "@agents-vault/core";
 
 export interface OcrAdapter {
   extractText(filePath: string): Promise<string>;

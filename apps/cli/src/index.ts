@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 async function run() {
-  const { AuthVault } = await import("@agent-vault/storage");
+  const { AuthVault } = await import("@agents-vault/storage");
   const authVault = new AuthVault();
   await authVault.loadIntoEnv();
   const { createProgram } = await import("./main");

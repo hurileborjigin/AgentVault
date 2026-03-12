@@ -1,12 +1,12 @@
 {
-  "name": "@agent-vault/shared",
+  "name": "@agents-vault/shared",
   "version": "1.0.0",
   "description": "Shared config schemas, errors, logger, and utilities for Agent Vault",
   "license": "MIT",
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agent-vault/agent-vault.git",
+    "url": "https://github.com/agents-vault/agents-vault.git",
     "directory": "packages/shared"
   },
   "engines": {

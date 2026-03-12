@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { AskService } from "@agent-vault/core";
+import { AskService } from "@agents-vault/core";
 import { header, info, divider, label } from "../ui";
 
 export function registerAskCommand(

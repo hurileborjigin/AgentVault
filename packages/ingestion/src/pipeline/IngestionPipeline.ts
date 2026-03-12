@@ -1,3 +1,3 @@
-import { IngestService } from "@agent-vault/core";
+import { IngestService } from "@agents-vault/core";
 
 export type IngestionPipeline = IngestService;

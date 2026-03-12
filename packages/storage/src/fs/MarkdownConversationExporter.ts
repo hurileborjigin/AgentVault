@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
-import { ConversationExporter, QueryLog } from "@agent-vault/core";
-import { dateFolderFromIso, slugifyQuestion, timestampSlugFromIso } from "@agent-vault/shared";
+import { ConversationExporter, QueryLog } from "@agents-vault/core";
+import { dateFolderFromIso, slugifyQuestion, timestampSlugFromIso } from "@agents-vault/shared";
 
 function formatLocation(metadata?: Record<string, unknown>): string {
   if (!metadata) return "";

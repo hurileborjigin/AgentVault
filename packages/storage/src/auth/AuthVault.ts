@@ -16,7 +16,7 @@ type VaultPayload = {
 };
 
 function baseDir(): string {
-  return path.join(os.homedir(), ".agent-vault");
+  return path.join(os.homedir(), ".agents-vault");
 }
 
 function authFilePath(): string {

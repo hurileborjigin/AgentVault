@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { AnswerProvider, Citation, RetrievedChunk } from "@agent-vault/core";
+import { AnswerProvider, Citation, RetrievedChunk } from "@agents-vault/core";
 import { buildPrompt, buildFallbackCitations } from "./promptUtils";
 
 export class OpenAIAnswerProvider implements AnswerProvider {

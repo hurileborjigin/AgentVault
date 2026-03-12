@@ -23,22 +23,22 @@ importers:
 
   apps/cli:
     dependencies:
-      '@agent-vault/core':
+      '@agents-vault/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@agent-vault/ingestion':
+      '@agents-vault/ingestion':
         specifier: workspace:*
         version: link:../../packages/ingestion
-      '@agent-vault/providers':
+      '@agents-vault/providers':
         specifier: workspace:*
         version: link:../../packages/providers
-      '@agent-vault/retrieval':
+      '@agents-vault/retrieval':
         specifier: workspace:*
         version: link:../../packages/retrieval
-      '@agent-vault/shared':
+      '@agents-vault/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@agent-vault/storage':
+      '@agents-vault/storage':
         specifier: workspace:*
         version: link:../../packages/storage
       '@inquirer/prompts':
@@ -63,16 +63,16 @@ importers:
 
   packages/core:
     dependencies:
-      '@agent-vault/shared':
+      '@agents-vault/shared':
         specifier: workspace:*
         version: link:../shared
 
   packages/ingestion:
     dependencies:
-      '@agent-vault/core':
+      '@agents-vault/core':
         specifier: workspace:*
         version: link:../core
-      '@agent-vault/shared':
+      '@agents-vault/shared':
         specifier: workspace:*
         version: link:../shared
       pdf-parse:
@@ -85,10 +85,10 @@ importers:
 
   packages/providers:
     dependencies:
-      '@agent-vault/core':
+      '@agents-vault/core':
         specifier: workspace:*
         version: link:../core
-      '@agent-vault/shared':
+      '@agents-vault/shared':
         specifier: workspace:*
         version: link:../shared
       openai:
@@ -97,10 +97,10 @@ importers:
 
   packages/retrieval:
     dependencies:
-      '@agent-vault/core':
+      '@agents-vault/core':
         specifier: workspace:*
         version: link:../core
-      '@agent-vault/shared':
+      '@agents-vault/shared':
         specifier: workspace:*
         version: link:../shared
 
@@ -115,10 +115,10 @@ importers:
 
   packages/storage:
     dependencies:
-      '@agent-vault/core':
+      '@agents-vault/core':
         specifier: workspace:*
         version: link:../core
-      '@agent-vault/shared':
+      '@agents-vault/shared':
         specifier: workspace:*
         version: link:../shared
 

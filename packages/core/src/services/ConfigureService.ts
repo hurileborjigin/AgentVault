@@ -6,7 +6,7 @@ import {
   nowIso,
   validateProviderEnv,
   ValidationError,
-} from "@agent-vault/shared";
+} from "@agents-vault/shared";
 
 export class ConfigureService {
   constructor(private readonly configRepository: ConfigRepository) {}

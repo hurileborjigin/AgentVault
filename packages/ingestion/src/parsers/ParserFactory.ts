@@ -1,4 +1,4 @@
-import { DocumentParser } from "@agent-vault/core";
+import { DocumentParser } from "@agents-vault/core";
 
 export class ParserFactory {
   constructor(private readonly parsers: DocumentParser[]) {}

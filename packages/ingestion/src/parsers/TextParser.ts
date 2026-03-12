@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { DocumentParser, ParsedAsset } from "@agent-vault/core";
-import { sanitizeTextForStorage } from "@agent-vault/shared";
+import { DocumentParser, ParsedAsset } from "@agents-vault/core";
+import { sanitizeTextForStorage } from "@agents-vault/shared";
 
 export class TextParser implements DocumentParser {
   supports(filePath: string): boolean {

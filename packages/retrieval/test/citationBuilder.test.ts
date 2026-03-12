@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { citationsFromRetrievedChunks } from "../src/answering/citationBuilder";
-import { RetrievedChunk } from "@agent-vault/core";
+import { RetrievedChunk } from "@agents-vault/core";
 
 function makeChunk(overrides?: Partial<RetrievedChunk>): RetrievedChunk {
   return {

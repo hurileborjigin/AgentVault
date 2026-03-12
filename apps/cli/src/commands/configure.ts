@@ -1,8 +1,8 @@
 import { Command } from "commander";
-import { ConfigureService } from "@agent-vault/core";
-import { resolveDbPath, resolveDefaultProject, resolveOutputDir } from "@agent-vault/shared";
+import { ConfigureService } from "@agents-vault/core";
+import { resolveDbPath, resolveDefaultProject, resolveOutputDir } from "@agents-vault/shared";
 import { runConfigurePrompt } from "../prompts/configurePrompt";
-import { LocalConfigRepository } from "@agent-vault/storage";
+import { LocalConfigRepository } from "@agents-vault/storage";
 import { success, label } from "../ui";
 
 export function registerConfigureCommand(program: Command, configureService: ConfigureService) {

@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { EmbeddingProvider } from "@agent-vault/core";
+import { EmbeddingProvider } from "@agents-vault/core";
 
 const KNOWN_DIMENSIONS: Record<string, number> = {
   "nomic-embed-text": 768,

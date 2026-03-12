@@ -1,4 +1,4 @@
-import { RetrievedChunk } from "@agent-vault/core";
+import { RetrievedChunk } from "@agents-vault/core";
 
 export function buildGroundedPrompt(question: string, context: RetrievedChunk[]): string {
   const contextBlock = context

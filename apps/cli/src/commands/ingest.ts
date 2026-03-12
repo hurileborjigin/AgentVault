@@ -1,7 +1,7 @@
 import { Command } from "commander";
-import { IngestService } from "@agent-vault/core";
+import { IngestService } from "@agents-vault/core";
 import { header, info, success, warn, divider, label, ProgressRenderer } from "../ui";
-import type { IngestProgress } from "@agent-vault/core";
+import type { IngestProgress } from "@agents-vault/core";
 
 export function registerIngestCommand(
   program: Command,

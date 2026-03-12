@@ -8,8 +8,8 @@ import {
   SearchOptions,
   SourceDocument,
   VectorStore,
-} from "@agent-vault/core";
-import { resolveDbPath } from "@agent-vault/shared";
+} from "@agents-vault/core";
+import { resolveDbPath } from "@agents-vault/shared";
 
 function cosineSimilarity(a: number[], b: number[]): number {
   if (a.length === 0 || b.length === 0 || a.length !== b.length) {

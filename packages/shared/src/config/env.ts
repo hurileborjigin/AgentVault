@@ -15,11 +15,11 @@ export function resolveOutputDir(cwd: string): string {
 }
 
 export function resolveDbPath(cwd: string): string {
-  return path.join(cwd, ".agent-vault", "agent-vault.sqlite");
+  return path.join(cwd, ".agents-vault", "agents-vault.sqlite");
 }
 
 export function resolveConfigPath(): string {
-  return path.join(os.homedir(), ".agent-vault", "agent-vault.json");
+  return path.join(os.homedir(), ".agents-vault", "agents-vault.json");
 }
 
 export function validateProviderEnv(provider: "openai" | "azure-openai" | "ollama"): ProviderEnvValidation {

@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { nowIso, ParsingError } from "@agent-vault/shared";
+import { nowIso, ParsingError } from "@agents-vault/shared";
 import { Chunker, DocumentParser, EmbeddingProvider, VectorStore } from "../ports/interfaces";
 import { IngestRequest, IngestSummary } from "../types/requests";
 import { SourceDocument } from "../domain/entities";

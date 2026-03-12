@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { EmbeddingProvider } from "@agent-vault/core";
+import { EmbeddingProvider } from "@agents-vault/core";
 
 export class OpenAIEmbeddingProvider implements EmbeddingProvider {
   private readonly client: OpenAI;

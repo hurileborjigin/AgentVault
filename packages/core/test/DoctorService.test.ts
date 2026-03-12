@@ -1,14 +1,14 @@
 import { describe, expect, it, vi } from "vitest";
 import { DoctorService } from "../src/services/DoctorService";
 import { ConfigRepository, VectorStore } from "../src/ports/interfaces";
-import { ModelConfiguration } from "@agent-vault/shared";
+import { ModelConfiguration } from "@agents-vault/shared";
 
 const MOCK_CONFIG: ModelConfiguration = {
   provider: "openai",
   answerModel: "gpt-4.1",
   embeddingModel: "text-embedding-3-large",
-  outputDir: "/tmp/agent-vault-test-doctor",
-  dbPath: ".agent-vault/agent-vault.sqlite",
+  outputDir: "/tmp/agents-vault-test-doctor",
+  dbPath: ".agents-vault/agents-vault.sqlite",
   updatedAt: "2026-01-01T00:00:00.000Z",
 };
 

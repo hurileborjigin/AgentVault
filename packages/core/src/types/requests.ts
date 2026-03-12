@@ -1,4 +1,4 @@
-import { ModelConfiguration } from "@agent-vault/shared";
+import { ModelConfiguration } from "@agents-vault/shared";
 
 export type IngestProgress = {
   phase: "scanning" | "processing" | "done";

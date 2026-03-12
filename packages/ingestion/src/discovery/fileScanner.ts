@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { sha256 } from "@agent-vault/shared";
-import { DiscoveredFile } from "@agent-vault/core";
+import { sha256 } from "@agents-vault/shared";
+import { DiscoveredFile } from "@agents-vault/core";
 
 const TEXT_EXTENSIONS = new Set([".txt", ".md", ".pdf"]);
 const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".webp"]);

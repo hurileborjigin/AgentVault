@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { ModelConfiguration, nowIso, ConfigError, RetrievalError } from "@agent-vault/shared";
+import { ModelConfiguration, nowIso, ConfigError, RetrievalError } from "@agents-vault/shared";
 import { Citation, QueryLog } from "../domain/entities";
 import { AnswerProvider, ConfigRepository, EmbeddingProvider, VectorStore } from "../ports/interfaces";
 import { AskRequest, AskSummary } from "../types/requests";
@@ -20,7 +20,7 @@ export class AskService {
   async ask(request: AskRequest): Promise<AskSummary> {
     const config = await this.dependencies.configRepository.load();
     if (!config) {
-      throw new ConfigError("No configuration found. Run `agent-vault configure` first.");
+      throw new ConfigError("No configuration found. Run `agents-vault configure` first.");
     }
 
     const embeddingProvider = this.dependencies.embeddingProviderFactory(config);
@@ -41,7 +41,7 @@ export class AskService {
 
     if (reduced.length === 0) {
       throw new RetrievalError(
-        "No indexed chunks found for this project. Run `agent-vault ingest` first.",
+        "No indexed chunks found for this project. Run `agents-vault ingest` first.",
       );
     }
 

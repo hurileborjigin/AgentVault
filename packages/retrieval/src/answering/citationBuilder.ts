@@ -1,4 +1,4 @@
-import { Citation, RetrievedChunk } from "@agent-vault/core";
+import { Citation, RetrievedChunk } from "@agents-vault/core";
 
 export function citationsFromRetrievedChunks(chunks: RetrievedChunk[]): Citation[] {
   return chunks.map((chunk) => ({

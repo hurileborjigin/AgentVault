@@ -1,8 +1,8 @@
 import readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 import { confirm, input, password, select } from "@inquirer/prompts";
-import { AuthVault } from "@agent-vault/storage";
-import { ProviderId, PROVIDER_REGISTRY } from "@agent-vault/shared";
+import { AuthVault } from "@agents-vault/storage";
+import { ProviderId, PROVIDER_REGISTRY } from "@agents-vault/shared";
 
 export type ConfigurePromptResult = {
   provider: ProviderId;

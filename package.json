@@ -1,12 +1,12 @@
 {
-  "name": "agent-vault-workspace",
-  "private": true,
+  "name": "agents-vault",
+  "private": false,
   "version": "1.0.0",
-  "description": "Agent Vault — CLI-first retrieval system for coding agents",
+  "description": "Agents Vault — CLI-first retrieval system for coding agents",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agent-vault/agent-vault.git"
+    "url": "https://github.com/agents-vault/agents-vault.git"
   },
   "packageManager": "pnpm@10.28.2",
   "engines": {
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "turbo build",
-    "dev": "pnpm --filter @agent-vault/cli dev",
+    "dev": "pnpm --filter @agents-vault/cli dev",
     "typecheck": "turbo typecheck",
     "test": "turbo test",
     "lint": "turbo lint"

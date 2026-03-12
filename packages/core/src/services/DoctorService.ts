@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { modelConfigurationSchema, resolveOutputDir, validateProviderEnv } from "@agent-vault/shared";
+import { modelConfigurationSchema, resolveOutputDir, validateProviderEnv } from "@agents-vault/shared";
 import { ConfigRepository, VectorStore } from "../ports/interfaces";
 
 export type DoctorCheck = {
@@ -22,7 +22,7 @@ export class DoctorService {
       checks.push({
         name: "config",
         ok: false,
-        message: "No config found. Run `agent-vault configure`.",
+        message: "No config found. Run `agents-vault configure`.",
       });
     } else {
       const parse = modelConfigurationSchema.safeParse(config);

@@ -1,5 +1,5 @@
 import { AzureOpenAI } from "openai";
-import { EmbeddingProvider } from "@agent-vault/core";
+import { EmbeddingProvider } from "@agents-vault/core";
 
 export class AzureOpenAIEmbeddingProvider implements EmbeddingProvider {
   private readonly client: AzureOpenAI;

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { ConfigureService } from "../src/services/ConfigureService";
 import { ConfigRepository } from "../src/ports/interfaces";
-import { ValidationError } from "@agent-vault/shared";
+import { ValidationError } from "@agents-vault/shared";
 
 function createMockConfigRepo(): ConfigRepository {
   return {
@@ -21,7 +21,7 @@ describe("ConfigureService", () => {
       provider: "openai",
       answerModel: "gpt-4.1",
       outputDir: ".conversations",
-      dbPath: ".agent-vault/agent-vault.sqlite",
+      dbPath: ".agents-vault/agents-vault.sqlite",
     });
 
     expect(config.provider).toBe("openai");
@@ -44,7 +44,7 @@ describe("ConfigureService", () => {
         provider: "openai",
         answerModel: "gpt-4.1",
         outputDir: ".conversations",
-        dbPath: ".agent-vault/agent-vault.sqlite",
+        dbPath: ".agents-vault/agents-vault.sqlite",
       }),
     ).rejects.toThrow(ValidationError);
 
@@ -64,7 +64,7 @@ describe("ConfigureService", () => {
         provider: "azure-openai",
         answerModel: "gpt-4.1-prod",
         outputDir: ".conversations",
-        dbPath: ".agent-vault/agent-vault.sqlite",
+        dbPath: ".agents-vault/agents-vault.sqlite",
       }),
     ).rejects.toThrow("Azure OpenAI requires a deployment name");
 

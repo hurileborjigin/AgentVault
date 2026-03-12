@@ -1,5 +1,5 @@
-import { EmbeddingProvider, AnswerProvider } from "@agent-vault/core";
-import { ModelConfiguration } from "@agent-vault/shared";
+import { EmbeddingProvider, AnswerProvider } from "@agents-vault/core";
+import { ModelConfiguration } from "@agents-vault/shared";
 import { OpenAIEmbeddingProvider } from "./embeddings/OpenAIEmbeddingProvider";
 import { AzureOpenAIEmbeddingProvider } from "./embeddings/AzureOpenAIEmbeddingProvider";
 import { OllamaEmbeddingProvider } from "./embeddings/OllamaEmbeddingProvider";

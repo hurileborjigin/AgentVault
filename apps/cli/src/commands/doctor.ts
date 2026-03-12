@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { DoctorService } from "@agent-vault/core";
+import { DoctorService } from "@agents-vault/core";
 import { header, success, fail, divider } from "../ui";
 
 export function registerDoctorCommand(program: Command, doctorServiceFactory: () => DoctorService) {

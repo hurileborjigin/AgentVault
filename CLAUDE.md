@@ -16,15 +16,15 @@ pnpm dev                  # dev mode for CLI package
 Filter to a single package:
 
 ```bash
-pnpm --filter @agent-vault/cli build
-pnpm --filter @agent-vault/core test
-pnpm --filter @agent-vault/storage typecheck
+pnpm --filter @agents-vault/cli build
+pnpm --filter @agents-vault/core test
+pnpm --filter @agents-vault/storage typecheck
 ```
 
 Run a single test file:
 
 ```bash
-pnpm --filter @agent-vault/core exec vitest run src/services/IngestService.test.ts
+pnpm --filter @agents-vault/core exec vitest run src/services/IngestService.test.ts
 ```
 
 Turbo task order: `build` → `typecheck` → `test` → `lint`. Tests depend on `^build`.
@@ -36,14 +36,14 @@ Ports-and-adapters (hexagonal) architecture. All external integrations sit behin
 ### Dependency Flow
 
 ```
-apps/cli  →  @agent-vault/core (services + ports)
+apps/cli  →  @agents-vault/core (services + ports)
                 ↓ depends on
-         @agent-vault/shared (config schemas, errors, logger, utils)
+         @agents-vault/shared (config schemas, errors, logger, utils)
                 ↑ implemented by
-  @agent-vault/storage     (SqliteVectorStore, LocalConfigRepository, AuthVault, MarkdownConversationExporter)
-  @agent-vault/providers   (OpenAI/Azure embedding + answer providers, stub OCR/vision)
-  @agent-vault/ingestion   (FileScanner, parsers, DefaultChunker, IngestionPipeline)
-  @agent-vault/retrieval   (contextReducer, groundedPrompt, citationBuilder)
+  @agents-vault/storage     (SqliteVectorStore, LocalConfigRepository, AuthVault, MarkdownConversationExporter)
+  @agents-vault/providers   (OpenAI/Azure embedding + answer providers, stub OCR/vision)
+  @agents-vault/ingestion   (FileScanner, parsers, DefaultChunker, IngestionPipeline)
+  @agents-vault/retrieval   (contextReducer, groundedPrompt, citationBuilder)
 ```
 
 ### Runtime Wiring
@@ -59,8 +59,8 @@ apps/cli  →  @agent-vault/core (services + ports)
 
 ### Storage
 
-- SQLite at `~/.agent-vault/agent-vault.sqlite` — cosine similarity computed in TypeScript (no vector extension)
-- Config at `~/.agent-vault/agent-vault.json`, encrypted auth at `~/.agent-vault/auth.json`
+- SQLite at `~/.agents-vault/agents-vault.sqlite` — cosine similarity computed in TypeScript (no vector extension)
+- Config at `~/.agents-vault/agents-vault.json`, encrypted auth at `~/.agents-vault/auth.json`
 - Optional Supabase backend with pgvector (migrations in `supabase/`)
 
 ### Ingestion Pipeline
@@ -70,20 +70,20 @@ FileScanner → ParserFactory (Text/PDF/Image) → DefaultChunker (800-token win
 ## CLI Surface
 
 ```
-agent-vault configure          # interactive provider/model setup
-agent-vault ingest             # discover, parse, chunk, embed, persist
-agent-vault ask                # grounded Q&A with citations
-agent-vault status             # config + index health
-agent-vault doctor             # environment diagnostics
+agents-vault configure          # interactive provider/model setup
+agents-vault ingest             # discover, parse, chunk, embed, persist
+agents-vault ask                # grounded Q&A with citations
+agents-vault status             # config + index health
+agents-vault doctor             # environment diagnostics
 ```
 
 ## Conventions
 
-- Business logic lives in `@agent-vault/core` services, never in CLI command handlers.
+- Business logic lives in `@agents-vault/core` services, never in CLI command handlers.
 - All provider/storage access goes through port interfaces — no direct imports of adapters in core.
 - CLI output is deterministic key=value pairs for scripting; non-zero exit codes on errors.
 - Prefer backward-compatible SQLite schema migrations.
-- Credentials are not auto-loaded from `.env`; export them in your shell or use `agent-vault configure`.
+- Credentials are not auto-loaded from `.env`; export them in your shell or use `agents-vault configure`.
 
 ## Environment Variables
 
@@ -100,10 +100,10 @@ export AZURE_OPENAI_API_VERSION=2024-12-01-preview
 
 | Directory              | Package name               |
 |------------------------|----------------------------|
-| `apps/cli`             | `@agent-vault/cli`         |
-| `packages/core`        | `@agent-vault/core`        |
-| `packages/ingestion`   | `@agent-vault/ingestion`   |
-| `packages/retrieval`   | `@agent-vault/retrieval`   |
-| `packages/storage`     | `@agent-vault/storage`     |
-| `packages/providers`   | `@agent-vault/providers`   |
-| `packages/shared`      | `@agent-vault/shared`      |
+| `apps/cli`             | `@agents-vault/cli`         |
+| `packages/core`        | `@agents-vault/core`        |
+| `packages/ingestion`   | `@agents-vault/ingestion`   |
+| `packages/retrieval`   | `@agents-vault/retrieval`   |
+| `packages/storage`     | `@agents-vault/storage`     |
+| `packages/providers`   | `@agents-vault/providers`   |
+| `packages/shared`      | `@agents-vault/shared`      |

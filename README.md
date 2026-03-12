@@ -64,7 +64,7 @@ Link globally:
 ```bash
 cd apps/cli
 pnpm link --global
-agent-vault --help
+agents-vault --help
 ```
 
 ## Command Reference
@@ -72,47 +72,47 @@ agent-vault --help
 Top-level help:
 
 ```bash
-agent-vault --help
+agents-vault --help
 ```
 
 Configure provider and model:
 
 ```bash
-agent-vault configure
+agents-vault configure
 ```
 
 Ingest project documents:
 
 ```bash
-agent-vault ingest --source ./docs --project my-project
-agent-vault ingest --source ./docs --project my-project --reindex
+agents-vault ingest --source ./docs --project my-project
+agents-vault ingest --source ./docs --project my-project --reindex
 ```
 
 Ask grounded questions:
 
 ```bash
-agent-vault ask "How does configuration work?" --project my-project
-agent-vault ask "What is the architecture?" --project my-project --top-k 6
+agents-vault ask "How does configuration work?" --project my-project
+agents-vault ask "What is the architecture?" --project my-project --top-k 6
 ```
 
 Health/status:
 
 ```bash
-agent-vault status --project my-project
-agent-vault doctor
+agents-vault status --project my-project
+agents-vault doctor
 ```
 
 ## Configuration and Secrets
 
-Agent Vault uses two files in `~/.agent-vault/`:
+Agent Vault uses two files in `~/.agents-vault/`:
 
-- `agent-vault.json`: non-secret config (provider, models, output directory, db path, default project).
+- `agents-vault.json`: non-secret config (provider, models, output directory, db path, default project).
 - `auth.json`: encrypted credentials.
 - `auth.key`: local encryption key used to decrypt `auth.json`.
 
 Behavior:
 
-- `agent-vault configure` updates provider/model config and can capture credentials interactively.
+- `agents-vault configure` updates provider/model config and can capture credentials interactively.
 - At runtime, credentials are loaded into process environment from the encrypted auth vault.
 - You can still provide credentials through shell environment variables if preferred.
 
@@ -156,7 +156,7 @@ Other popular combinations:
 ### 3. Configure Agent Vault
 
 ```bash
-agent-vault configure
+agents-vault configure
 ```
 
 Select **Ollama (Local)** when prompted. Agent Vault will auto-discover your pulled models:
@@ -175,8 +175,8 @@ No API keys are needed — Ollama runs entirely on your machine.
 ### 4. Ingest and ask
 
 ```bash
-agent-vault ingest --source ./my-docs --project my-project
-agent-vault ask "What does this project do?" --project my-project
+agents-vault ingest --source ./my-docs --project my-project
+agents-vault ask "What does this project do?" --project my-project
 ```
 
 ### Troubleshooting Ollama
@@ -184,7 +184,7 @@ agent-vault ask "What does this project do?" --project my-project
 - Make sure `ollama serve` is running before using `ingest` or `ask`.
 - If embedding fails mid-ingest, retry with `--reindex`. Large batches can occasionally cause Ollama's internal subprocess to restart.
 - To verify Ollama is reachable: `curl http://localhost:11434/api/tags`
-- If using a non-default port or remote Ollama instance, specify the base URL during `agent-vault configure`.
+- If using a non-default port or remote Ollama instance, specify the base URL during `agents-vault configure`.
 
 ## Supported Inputs
 
@@ -221,13 +221,13 @@ pnpm lint
 CLI package only:
 
 ```bash
-pnpm --filter @agent-vault/cli build
-pnpm --filter @agent-vault/cli test
+pnpm --filter @agents-vault/cli build
+pnpm --filter @agents-vault/cli test
 ```
 
 ## Troubleshooting
 
-- Run `agent-vault doctor` first for environment/config/storage checks.
+- Run `agents-vault doctor` first for environment/config/storage checks.
 - If commands fail globally, relink:
 
 ```bash
@@ -235,7 +235,7 @@ cd apps/cli
 pnpm link --global
 ```
 
-- If provider calls fail, rerun `agent-vault configure` and re-enter credentials.
+- If provider calls fail, rerun `agents-vault configure` and re-enter credentials.
 
 ## Roadmap
 

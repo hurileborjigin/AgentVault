@@ -12,16 +12,16 @@ export function createProgram(cwd: string) {
 
   const program = new Command();
   program
-    .name("agent-vault")
+    .name("agents-vault")
     .description("CLI-first retrieval system for coding agents")
     .version("1.0.0")
     .addHelpText(
       "after",
       `
 ${chalk.bold.cyan("Quick Start:")}
-  ${chalk.dim("$")} agent-vault configure
-  ${chalk.dim("$")} agent-vault ingest --source ./docs --project my-project
-  ${chalk.dim("$")} agent-vault ask "How does auth work?" --project my-project
+  ${chalk.dim("$")} agents-vault configure
+  ${chalk.dim("$")} agents-vault ingest --source ./docs --project my-project
+  ${chalk.dim("$")} agents-vault ask "How does auth work?" --project my-project
 
 ${chalk.bold.cyan("Common Flags:")}
   ${chalk.white("ingest:")} --source <path> --project <id> [--reindex] [--dry-run] [--include-images]

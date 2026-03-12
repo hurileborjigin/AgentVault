@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import pdfParse from "pdf-parse";
-import { DocumentParser, ParsedAsset } from "@agent-vault/core";
-import { sanitizeTextForStorage } from "@agent-vault/shared";
+import { DocumentParser, ParsedAsset } from "@agents-vault/core";
+import { sanitizeTextForStorage } from "@agents-vault/shared";
 
 function detectPrintedPageLabel(pageText: string): number | null {
   const lines = pageText

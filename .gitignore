@@ -8,6 +8,6 @@ coverage
 *.tsbuildinfo
 *.sqlite
 *.sqlite3
-.agent-vault/
+.agents-vault/
 .conversations
 .answers
